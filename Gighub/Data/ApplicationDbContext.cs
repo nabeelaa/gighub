@@ -8,15 +8,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Gighub.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+    public class ApplicationDbContext : DbContext
     {
-        public DbSet<Gig> Gigs { get; set; }
-        public DbSet<Genre> Genres { get; set; }
-
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+
+        public DbSet<Gig> Gigs { get; set; }
+        public DbSet<Genre> Genres { get; set; }
     }
 }
